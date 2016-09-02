@@ -16,16 +16,10 @@
     background-size: 2880px 1620px;
   }
   .container{
-    margin-top: 20px;
-   background-color: GhostWhite;
-   border-radius: 10px;
-   background-repeat:no-repeat;
-
+    background-color: GhostWhite;
+    border-radius: 10px;
+    background-repeat:no-repeat;
  }
-.page-header{
-  color:  #4080bf;
-  text-shadow: 1px 2px #404040;
-}
 </style>
 </head>
 <body>
@@ -47,15 +41,9 @@
   </nav>
 
   <div class="container">
-    <div class="row">
-    <div class="col-xs-12">
-      <h1>{{user['name']}}'s Saved Locations</h1>
+      <div class="page-header col-sm-12 col-md-9 col-lg-9">
+        <h1>{{user['name']}}'s saved locations</h1>
       </div>
-      </nav>
-      <div class="container-fluid">
-          <div class="page-header col-sm-12 col-md-9 col-lg-9">
-            <h1>{{user['name']}}'s saved locations</h1>
-          </div>
       <div>
       <div class="col-sm-1 col-md-3 col-sm-3"></div>
       <table class=" table-hover col-sm-11 col-md-9 col-lg-9">
@@ -73,7 +61,7 @@
         <td><a href="/place/{{favorite.id}}">{{favorite['name']}}</a></td>
         <td><a href="/place/{{favorite.id}}">{{favorite['location']}}</a></td>
         {% if session['id'] == user['id']: %}
-        <td><a href="/edit_page/{{favorite.id}}">Edit</a></td>        
+        <td><a href="/edit_page/{{favorite.id}}">Edit</a></td>
         <td><a href="/delete_page/{{favorite.id}}">Delete</a></td>
 
           {% endif %}
@@ -86,7 +74,7 @@
 </div>
 {% if session['id'] == user['id']: %}
 
-<div class="container">
+<div class="container-fluid">
   <div class="row">
     <div class="col-xs-12">
           <h2>Add Location</h2>
